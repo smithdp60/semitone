@@ -1,0 +1,88 @@
+body {
+  color: #000000;
+  font-family: 'Dosis', serif;
+  font-weight: 400;
+  background: url("./piano.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#nav {
+  border-radius: 0;
+  background-color: rgba(42,42,42,.8);
+  height: 75px;
+}
+
+.navbar-brand {
+  font-family: 'Dosis', sans-serif;
+  font-size: 4.8em;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 0;
+  padding: 20px;
+  margin-top: 5px;
+  letter-spacing: .05em;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #ffffff;
+}
+
+.header-buttons {
+  padding: 12px;
+  margin: 17px 12px 12px 0;
+}
+
+#searchBox {
+  width: 330px;
+  text-align: center;
+  height: 46px;
+  margin-top: 9px;
+}
+
+.search-button {
+  padding: 12px;
+  margin-top: 9px;
+  margin-left: 12px;
+}
+
+#logo {
+  width: 500px;
+  height: 300px;
+  margin: 110px auto 0;
+  text-align: center;
+  padding: 45px 0;
+  border-radius: 20px;
+  background: rgba(20,20,20,.75);
+  vertical-align: middle;
+}
+
+    #logoPic {
+      width: 180px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      font-size: 12em;
+      color: #ffffff;
+    }
+
+    #slogan {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+        #sloganText {
+          text-align: left;
+          font-size: 3.5em;
+          line-height: 1.2em;
+          margin: -35px 0 0 0;
+          color: #ffffff;
+        }
+
+#footer {
+  background-color: rgba(42,42,42,.8);
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  padding: 15px;
+}
