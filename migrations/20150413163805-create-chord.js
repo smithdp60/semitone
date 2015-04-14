@@ -17,6 +17,9 @@ module.exports = {
       chords: {
         type: DataTypes.TEXT
       },
+      key: {
+        type: DataTypes.INTEGER
+      },
       userId: {
         type: DataTypes.INTEGER
       },

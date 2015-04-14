@@ -7,10 +7,10 @@ var opts = {
 
 search('john legend all of me', opts, function(err, results) {
   if(err) return console.log(err);
-
   var titles = results.map(function(video) {
-    return {title: video.title, url: video.url}
+    var urlObject = {video:video.url};
+    var url = (urlObject['video'])
+    var slicedUrl = url.slice(url.indexOf("=") + 1, url.indexOf("&"));;
+    console.log(slicedUrl)
   })
-
-  console.log(titles);
 });

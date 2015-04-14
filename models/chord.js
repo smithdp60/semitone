@@ -4,6 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     artist: DataTypes.STRING,
     chords: DataTypes.TEXT,
+    key: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }, {
     classMethods: {

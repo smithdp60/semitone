@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+
+
+</div
+
+<div class="container">
+  <div class="left"><%- chords %></div>
+
+
+  <div class="right">
+    <div class="song-info">
+      <h3>
+        <%- slicedTitle %>
+      </h3>
+      <h4>Transposed: 0</h4>
+      <h4>
+      <button type="button" class="btn btn-primary btn-md">
+        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-primary btn-md">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </button>
+      </h3>
+    </div>
+
+    <div class="youtube">
+
+<iframe src=<%= "https://www.youtube.com/embed/" + slicedUrl %> frameborder="0" allowfullscreen></iframe>
+
+
+    </div>
+
+  </div>
+</div>

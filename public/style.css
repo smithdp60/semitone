@@ -1,6 +1,6 @@
 body {
   color: #000000;
-  font-family: 'Dosis', serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   background: url("./piano.jpg");
   background-size: cover;
@@ -11,6 +11,7 @@ body {
   border-radius: 0;
   background-color: rgba(42,42,42,.8);
   height: 75px;
+  margin: 0;
 }
 
 .navbar-brand {
@@ -46,6 +47,8 @@ body {
   margin-left: 12px;
 }
 
+/*MAIN PAGE*/
+
 #logo {
   width: 500px;
   height: 300px;
@@ -55,6 +58,7 @@ body {
   border-radius: 20px;
   background: rgba(20,20,20,.75);
   vertical-align: middle;
+  font-family: 'Dosis', sans-serif;
 }
 
     #logoPic {
@@ -79,9 +83,60 @@ body {
           color: #ffffff;
         }
 
+/*CHORDS*/
+
+.left {
+  background-color: rgba(221,221,221,1);
+  width: 50vw;
+  height: 88.7vh;
+  display: inline-block;
+  margin: 0;
+  padding: 25px 0 25px 25px;
+  border-right: 2px solid black;
+  float: left;
+  font-family: monospace;
+  overflow: auto;
+  white-space: pre;
+}
+
+.right {
+  background-color: rgba(51,51,51,1);
+  width: 50vw;
+  height: 88.7vh;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+    .song-info {
+      color: #ffffff;
+      padding: 25px 25px 25px 25px;
+      text-align: right;
+    }
+        .song-info h4, button {
+          margin-top: 10px;
+        }
+        .song-info h3 {
+          font-family: 'Dosis', sans-serif;
+          margin: 0;
+        }
+        .song-info button {
+          color: white;
+        }
+
+    .youtube {
+      position: fixed;
+      bottom: 0;
+    }
+
+    iframe {
+      width: 50vw;
+      height: 30.4vw;
+    }
+
+
 #footer {
   background-color: rgba(42,42,42,.8);
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: #ffffff;
   padding: 15px;
