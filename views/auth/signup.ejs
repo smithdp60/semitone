@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+<div id="signup">
+<div class="modal-body">
+
+  <% if(typeof alerts !== 'undefined'){ %>
+  <% for(key in alerts){ %>
+  <% alerts[key].forEach(function(thisMsg){ %>
+  <div class="alert alert-<%= key %>"><%= thisMsg %></div>
+  <% }); %>
+  <% } %>
+  <% } %>
+
+  <form class="form" method="post" action="/auth/signup">
+    <input type="text" class="form-control" placeholder="Name" name="name">
+    <input type="text" class="form-control" placeholder="E-mail" name="email">
+    <input type="password" class="form-control" placeholder="Password" name="password">
+  </div>
+    <button type="submit" class="btn btn-primary signupBtn">Sign Up</button>
+  </form>
+</div>
+
+
+<% include ../partials/footer %>

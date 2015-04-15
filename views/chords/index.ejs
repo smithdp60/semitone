@@ -10,26 +10,40 @@
 
   <div class="right">
     <div class="song-info">
-      <h3>
-        <%- slicedTitle %>
-      </h3>
-      <h4>Transposed: 0</h4>
-      <h4>
-      <button type="button" class="btn btn-primary btn-md">
-        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-      </button>
-      <button type="button" class="btn btn-primary btn-md">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-      </button>
-      </h3>
+
+
+      <form class="addForm" method="post" action="/chords">
+        <input type="hidden" name="song" value="<%= slicedTitle %>">
+        <input type="hidden" name="chords" value="<%= chords %>">
+        <input type="hidden" name="key" value="0">
+        <input type="hidden" name="youtube" value="<%= slicedUrl %>">
+        <h2>
+          <%- slicedTitle %>
+          <% if (getUser) { %>
+          &nbsp;&nbsp;<button type="submit" class="btn btn-primary btn-md favBtn">
+            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          </button>
+        <% } %>
+        </h2>
+        </form>
+        <br>
+        <h4>
+          Key: 0 &nbsp;&nbsp;
+          <button type="button" class="btn btn-primary btn-md">
+            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-primary btn-md">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </button>
+        </h4>
+      </div>
+
+      <div class="youtube">
+
+        <iframe src=<%= "https://www.youtube.com/embed/" + slicedUrl %> frameborder="0" allowfullscreen></iframe>
+
+
+      </div>
+
     </div>
-
-    <div class="youtube">
-
-<iframe src=<%= "https://www.youtube.com/embed/" + slicedUrl %> frameborder="0" allowfullscreen></iframe>
-
-
-    </div>
-
   </div>
-</div>

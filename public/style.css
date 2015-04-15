@@ -83,6 +83,7 @@ body {
           color: #ffffff;
         }
 
+
 /*CHORDS*/
 
 .left {
@@ -109,18 +110,21 @@ body {
 }
     .song-info {
       color: #ffffff;
-      padding: 25px 25px 25px 25px;
+      padding: 25px 25px 25px 0px;
       text-align: right;
     }
-        .song-info h4, button {
-          margin-top: 10px;
-        }
-        .song-info h3 {
+
+        .song-info h2 {
           font-family: 'Dosis', sans-serif;
-          margin: 0;
+          margin: 25px 0 0 0;
+          margin-right: 0;
         }
         .song-info button {
           color: white;
+        }
+
+        .favBtn {
+          margin-top: -5px;
         }
 
     .youtube {
@@ -133,6 +137,87 @@ body {
       height: 30.4vw;
     }
 
+
+/*FAVORITES*/
+
+.favEntry {
+  margin-bottom: 10px;
+}
+
+div.alert.btn-primary {
+  padding: 10px;
+  height: 45px;
+}
+
+    .details {
+      margin: 0px;
+      padding: 0;
+      float: left;
+      display: inline;
+    }
+
+    .transposed {
+      float: right;
+    }
+
+
+/*LOGIN*/
+
+.alert {
+  padding: 3px;
+  margin: 3px 0 3px 0;
+}
+
+
+#login {
+  width: 500px;
+  height: 300px;
+  margin: 110px auto 0;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(20,20,20,.75);
+  vertical-align: middle;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+}
+
+#login input {
+  margin-top: 5px;
+}
+
+.loginBtn {
+  float: right;
+  margin-right: 15px;
+}
+
+
+/*SIGNUP*/
+
+#signup {
+  width: 500px;
+  height: 300px;
+  margin: 110px auto 0;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(20,20,20,.75);
+  vertical-align: middle;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+}
+
+#signup input {
+  margin-top: 5px;
+}
+
+.signupBtn {
+  float: right;
+  margin-right: 15px;
+}
+
+
+/*FOOTER*/
 
 #footer {
   background-color: rgba(42,42,42,.8);

@@ -1,10 +1,10 @@
 "use strict";
 module.exports = function(sequelize, DataTypes) {
   var chord = sequelize.define("chord", {
-    title: DataTypes.STRING,
-    artist: DataTypes.STRING,
+    song: DataTypes.STRING,
     chords: DataTypes.TEXT,
     key: DataTypes.INTEGER,
+    youtube: DataTypes.STRING,
     userId: DataTypes.INTEGER
   }, {
     classMethods: {

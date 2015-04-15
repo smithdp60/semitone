@@ -8,10 +8,7 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      title: {
-        type: DataTypes.STRING
-      },
-      artist: {
+      song: {
         type: DataTypes.STRING
       },
       chords: {
@@ -19,6 +16,9 @@ module.exports = {
       },
       key: {
         type: DataTypes.INTEGER
+      },
+      youtube: {
+        type: DataTypes.STRING
       },
       userId: {
         type: DataTypes.INTEGER
