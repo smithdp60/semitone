@@ -61,27 +61,27 @@ body {
   font-family: 'Dosis', sans-serif;
 }
 
-    #logoPic {
-      width: 180px;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 10px;
-      font-size: 12em;
-      color: #ffffff;
-    }
+#logoPic {
+  width: 180px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  font-size: 12em;
+  color: #ffffff;
+}
 
-    #slogan {
-      display: inline-block;
-      vertical-align: middle;
-    }
+#slogan {
+  display: inline-block;
+  vertical-align: middle;
+}
 
-        #sloganText {
-          text-align: left;
-          font-size: 3.5em;
-          line-height: 1.2em;
-          margin: -35px 0 0 0;
-          color: #ffffff;
-        }
+#sloganText {
+  text-align: left;
+  font-size: 3.5em;
+  line-height: 1.2em;
+  margin: -35px 0 0 0;
+  color: #ffffff;
+}
 
 
 /*CHORDS*/
@@ -108,34 +108,34 @@ body {
   margin: 0;
   padding: 0;
 }
-    .song-info {
-      color: #ffffff;
-      padding: 25px 31px 25px 0px;
-      text-align: right;
-    }
+.song-info {
+  color: #ffffff;
+  padding: 25px 31px 25px 0px;
+  text-align: right;
+}
 
-        .song-info h2 {
-          font-family: 'Dosis', sans-serif;
-          margin: 8px 0 0 0;
-          margin-right: 0;
-        }
-        .song-info button {
-          color: white;
-        }
+.song-info h2 {
+  font-family: 'Dosis', sans-serif;
+  margin: 8px 0 0 0;
+  margin-right: 0;
+}
+.song-info button {
+  color: white;
+}
 
-        .favBtn {
-          margin-top: -5px;
-        }
+.favBtn {
+  margin-top: -5px;
+}
 
-    .youtube {
-      position: fixed;
-      bottom: 0;
-    }
+.youtube {
+  position: fixed;
+  bottom: 0;
+}
 
-    iframe {
-      width: 50vw;
-      height: 30.4vw;
-    }
+iframe {
+  width: 50vw;
+  height: 30.4vw;
+}
 
 
 /*FAVORITES*/
@@ -149,12 +149,18 @@ div.alert.btn-primary {
   height: 45px;
 }
 
-    .details {
-      margin: 0px;
-      padding: 0;
-      float: left;
-      display: inline;
-    }
+.details {
+  margin: 0px;
+  padding: 0;
+  float: left;
+  display: inline;
+}
+
+#FB {
+  background-color: #337ab7;
+  margin-top: 10px;
+  border-radius: 4px;
+}
 
 /*LOGIN*/
 
