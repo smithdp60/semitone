@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+<div class="left">
+  <pre data-key="Ab">
+    <%- faves.chords %>
+  </pre>
+  <script type="text/javascript">
+    $(function() {
+      $("pre").transpose({ key : 'Ab' });
+    });
+  </script>
+
+</div>
+
+
+<div class="right">
+  <div class="song-info">
+      <h2>
+        <%- faves.song %>
+    </h2>
+</div>
+
+<div class="youtube">
+
+  <iframe src=<%= "https://www.youtube.com/embed/" + faves.youtube %> frameborder="0" allowfullscreen></iframe>
+
+
+</div>
+
+</div>
+</div>

@@ -1,49 +1,47 @@
 <% include ../partials/header %>
 
+<div class="left">
+  <pre data-key="Ab">
+    <%- chords %>
+  </pre>
+  <script type="text/javascript">
+    $(function() {
+      $("pre").transpose({ key : 'Ab' });
+    });
+  </script>
+
+</div>
 
 
-</div
-
-<div class="container">
-  <div class="left"><%- chords %></div>
+<div class="right">
+  <div class="song-info">
 
 
-  <div class="right">
-    <div class="song-info">
+    <form class="addForm" method="post" action="/chords">
+      <input type="hidden" name="song" value="<%= slicedTitle %>">
+      <input type="hidden" name="chords" value="<%= chords %>">
+      <input type="hidden" name="youtube" value="<%= slicedUrl %>">
+      <h2>
+        <%- slicedTitle %>
+        <% if (getUser) { %>
+        <% if (fave !== true) { %>
+        <span id="spaces">&nbsp;&nbsp;</span><button type="submit" class="btn btn-primary btn-md favBtn">
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+      </button>
+      <% } %>
+      <% } %>
 
 
-      <form class="addForm" method="post" action="/chords">
-        <input type="hidden" name="song" value="<%= slicedTitle %>">
-        <input type="hidden" name="chords" value="<%= chords %>">
-        <input type="hidden" name="key" value="0">
-        <input type="hidden" name="youtube" value="<%= slicedUrl %>">
-        <h2>
-          <%- slicedTitle %>
-          <% if (getUser) { %>
-          &nbsp;&nbsp;<button type="submit" class="btn btn-primary btn-md favBtn">
-            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-          </button>
-        <% } %>
-        </h2>
-        </form>
-        <br>
-        <h4>
-          Key: 0 &nbsp;&nbsp;
-          <button type="button" class="btn btn-primary btn-md">
-            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-          </button>
-          <button type="button" class="btn btn-primary btn-md">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          </button>
-        </h4>
-      </div>
+    </h2>
+  </form>
+</div>
 
-      <div class="youtube">
+<div class="youtube">
 
-        <iframe src=<%= "https://www.youtube.com/embed/" + slicedUrl %> frameborder="0" allowfullscreen></iframe>
+  <iframe src=<%= "https://www.youtube.com/embed/" + slicedUrl %> frameborder="0" allowfullscreen></iframe>
 
 
-      </div>
+</div>
 
-    </div>
-  </div>
+</div>
+</div>

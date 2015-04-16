@@ -1,0 +1,45 @@
+/*!
+ * jQuery Chord Transposer plugin v1.0
+ * http://codegavin.com/projects/transposer
+ *
+ * Copyright 2010, Jesse Gavin
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://codegavin.com/license
+ *
+ * Date: Sat Jun 26 21:27:00 2010 -0600
+ */
+span.c {
+  font-weight: bold;
+  color: #337ab7;
+}
+
+.transpose-keys {
+  margin: -28px 8px 10px;
+	overflow: auto;
+	font: normal 13px sans-serif;
+  /*border: 1px solid red;*/
+}
+.transpose-keys a {
+	display: block;
+	float: left;
+	width: 2.25em;
+	text-align: center;
+	margin: 0 .25em .25em 0;
+	color: #333;
+	background: #eee;
+	text-decoration: none;
+	padding: .4em 0;
+	border: solid 1px transparent;
+	outline: none;
+}
+.transpose-keys a.selected {
+  background: #337ab7;
+  color: #fff;
+}
+
+pre {
+  background-color: rgba(221,221,221,1);
+  padding-bottom: 0;
+  border: none;
+  overflow-x: auto;
+}

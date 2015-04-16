@@ -5,13 +5,16 @@
   <title>Semitone</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/transposer.css">
   <link href='http://fonts.googleapis.com/css?family=Dosis:400,600' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script type="text/javascript"
   src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  <script src="/js/transposer.js"></script>
   <script src="/js/script.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -56,42 +59,36 @@
           <h4 class="modal-title">Favorites</h4>
         </div>
         <div class="modal-body">
-
-
+          <% if (allFaves.length > 0) { %>
+          <% for (i = 0; i < allFaves.length; i += 1) { %>
           <div class="favEntry">
             <div class="alert btn-primary">
               <div class="details">
-                <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
-                <button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>&nbsp;
-                Song Title - Artist Name
+                <a href=<%= "/favorites/" + allFaves[i].id %>>
+                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+                </a>&nbsp;
+
+                  <button type="submit" class="btn btn-danger btn-xs removeButton"
+                  a href="/favorites/<%=allFaves[i].id%>"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+
+
+
+                &nbsp;
+
+
+                <%- allFaves[i].song %>
               </div>
-              <span class="transposed">
-                (Transposed: -2)
-                </span>
             </div>
           </div>
-
-
-          <div class="favEntry">
-            <div class="alert btn-primary">
-              <div class="details">
-                <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
-                <button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>&nbsp;
-                Song Title - Artist Name
-              </div>
-              <span class="transposed">
-                (Transposed: +4)
-                </span>
-            </div>
-          </div>
-
-
+          <% } %>
+          <% } else if (allFaves.length === 0) { %>
+          <p>You have no favorites.</p>
+          <% } %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </form>
       </div>
-
     </div>
   </div>
 </div>

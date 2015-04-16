@@ -15,6 +15,7 @@ var opts = {
 
 router.get("/", function(req,res) {
   var query = req.query.q;
+  var user = req.getUser();
   if (query !== "") {
   //retrieves chord search results
   request('http://www.ultimate-tabs.com/search.htm?search=' + query, function (error, response, html) {
@@ -31,7 +32,7 @@ router.get("/", function(req,res) {
             var $ = cheerio.load(html);
             $('pre#core').each(function (i, element) {
             });
-            var chords = $('pre#core').html().trim();
+            var chords = $('pre#core').html().replace(/\(|\)/g, "").trim();
             //retrieves YouTube video ID
             search(slicedTitle, opts, function(err, results) {
               if(err) return console.log(err);
@@ -39,24 +40,34 @@ router.get("/", function(req,res) {
                 var urlObject = {video:video.url};
                 var url = (urlObject['video'])
                 var slicedUrl = url.slice(url.indexOf("=") + 1, url.indexOf("&"));;
-                res.render("chords/index", {slicedTitle:slicedTitle, link:link, chords:chords, slicedUrl:slicedUrl});
+
+
+                db.chord.find({where: {song: slicedTitle}}).then(function(fave) {
+                  if (fave !== null) {
+                    fave = true;
+                  } else if (fave === null) {
+                    fave = false;
+                  }
+
+                res.render("chords/index", {slicedTitle:slicedTitle, link:link, chords:chords, slicedUrl:slicedUrl, fave:fave});
+              })
               })
             });
           }
         });
-      }
-    })
+}
+})
 } else {
   res.render("./index");
 }
 })
 
 
-
+//ADD TO FAVORITES
 router.post("/", function(req,res) {
   db.chord.findOrCreate({where: {song: req.body.song, chords: req.body.chords, youtube: req.body.youtube, userId: req.getUser().id}}).spread(function(data, created) {
     data.save().then(function(data) {
-      res.send(data);
+      res.send({result:true});
     })
   })
 })

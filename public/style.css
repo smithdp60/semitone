@@ -20,7 +20,7 @@ body {
   font-weight: 600;
   color: #ffffff;
   border-radius: 0;
-  padding: 20px;
+  padding: 20px 20px 20px 31px;
   margin-top: 5px;
   letter-spacing: .05em;
 }
@@ -110,13 +110,13 @@ body {
 }
     .song-info {
       color: #ffffff;
-      padding: 25px 25px 25px 0px;
+      padding: 25px 31px 25px 0px;
       text-align: right;
     }
 
         .song-info h2 {
           font-family: 'Dosis', sans-serif;
-          margin: 25px 0 0 0;
+          margin: 8px 0 0 0;
           margin-right: 0;
         }
         .song-info button {
@@ -155,11 +155,6 @@ div.alert.btn-primary {
       float: left;
       display: inline;
     }
-
-    .transposed {
-      float: right;
-    }
-
 
 /*LOGIN*/
 
