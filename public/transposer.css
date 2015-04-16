@@ -31,10 +31,16 @@ span.c {
 	padding: .4em 0;
 	border: solid 1px transparent;
 	outline: none;
+  border-radius: 4px;
 }
 .transpose-keys a.selected {
   background: #337ab7;
-  color: #fff;
+  color: #ffffff;
+}
+
+.transpose-keys a:hover {
+  background-color: #337ab7;
+  color: #ffffff;
 }
 
 pre {
