@@ -38,7 +38,7 @@ app.use('*', function(req,res,next){
 
 //middleware for showing all favorites in header modal
 app.use(function(req,res,next){
-  db.chord.findAll().then(function(taco){
+  db.chord.findAll({where: {userId: req.getUser().id}}).then(function(taco){
     res.locals.allFaves=taco;
     next();
   });
