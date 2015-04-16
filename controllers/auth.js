@@ -76,7 +76,7 @@ router.post('/login',function(req,res){
                         email:user.email,
                         name:user.name
                     };
-                    req.flash('success','You have been logged in.');
+                    req.flash('success','Logged in.');
                     res.redirect('/');
                 }else{
                     req.flash('danger','Invalid password.');
