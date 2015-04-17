@@ -55,6 +55,11 @@ One of my original visions for the app was to display search suggestions as the 
 I initially tried to use modals for log in and sign up, however, I wasn’t able to display error messages, since the modals disappeared, and then displayed the same error for both log in and sign up modals. So this had to go.
 
 
+### Bootstrap modal favorites with adding favorites
+
+Wasn't able to make favorites appear in the modal without refreshing the page. Would like to figure out how to use AJAX to make the newest favorite appear instantly.
+
+
 [Semitone GitHub repo]:https://github.com/smithdp60/semitone
 
 [Semitone on Heroku]:https://semitone.herokuapp.com/
