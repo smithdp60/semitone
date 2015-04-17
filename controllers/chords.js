@@ -33,7 +33,8 @@ router.get("/", function(req,res) {
               var $ = cheerio.load(html);
               $('pre#core').each(function (i, element) {
               });
-              var chords = $('pre#core').html().replace(/\(|\)/g, "").trim();
+              var chords = $('pre#core').html().trim();
+              // .replace(/\(|\)/g, "") // removed from between html() and trim()
               //retrieves YouTube video ID
               search(slicedTitle, opts, function(err, results) {
                 if(err) return console.log(err);
