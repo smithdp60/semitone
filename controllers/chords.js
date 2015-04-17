@@ -41,14 +41,13 @@ router.get("/", function(req,res) {
                   var urlObject = {video:video.url};
                   var url = (urlObject['video'])
                   var slicedUrl = url.slice(url.indexOf("=") + 1, url.indexOf("&"));
-                  db.chord.find({where: {song: slicedTitle}}).then(function(fave) {
+                  db.chord.find({where: {song: slicedTitle, userId: req.getUser().id}}).then(function(fave) {
                     if (fave !== null) {
                       fave = true;
                     } else if (fave === null) {
                       fave = false;
                     }
                   res.render("chords/index", {slicedTitle:slicedTitle, link:link, chords:chords, slicedUrl:slicedUrl, fave:fave});
-
                   })
                 })
               });
