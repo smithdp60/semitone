@@ -31,7 +31,6 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-
           <% if (getUser) { %>
           <a href="#favoritesModal" role="button" class="btn btn-primary btn-show header-buttons" data-toggle="modal">Favorites</a>
           <a href="/auth/logout" role="button" class="btn btn-primary btn-show header-buttons" data-toggle="modal">Log Out</a>
@@ -39,10 +38,8 @@
           <a href="/auth/login" role="button" class="btn btn-primary btn-show header-buttons">Log In</a>
           <a href="/auth/signup" role="button" class="btn btn-primary btn-show header-buttons">Sign Up</a>
           <% } %>
-
         </ul>
         <ul class="nav navbar-nav navbar-right">
-
           <form class="navbar-form navbar-left" role="search" method="get" action="/chords">
             <div class="form-group">
               <input name="q" type="text" class="form-control" id="searchBox"
@@ -50,12 +47,10 @@
             </div>
             <button type="submit" class="btn btn-primary search-button">Search</button>
           </form>
-
         </ul>
       </div>
     </div>
   </nav>
-
 
   <div id="favoritesModal" class="modal fade">
     <div class="modal-dialog modal-md">

@@ -52,22 +52,13 @@ body {
 #logo {
   width: 500px;
   height: 300px;
-  margin: 110px auto 0;
+  margin: 120px auto 0;
   text-align: center;
   padding: 45px 0;
   border-radius: 20px;
   background: rgba(20,20,20,.75);
   vertical-align: middle;
   font-family: 'Dosis', sans-serif;
-}
-
-#logoPic {
-  width: 180px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  font-size: 12em;
-  color: #ffffff;
 }
 
 #slogan {
@@ -80,6 +71,15 @@ body {
   font-size: 3.5em;
   line-height: 1.2em;
   margin: -35px 0 0 0;
+  color: #ffffff;
+}
+
+#logoPic {
+  width: 180px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  font-size: 12em;
   color: #ffffff;
 }
 
@@ -173,7 +173,7 @@ div.alert.btn-primary {
 #login {
   width: 500px;
   height: 300px;
-  margin: 110px auto 0;
+  margin: 120px auto 0;
   text-align: center;
   padding: 10px;
   border-radius: 20px;
@@ -198,7 +198,7 @@ div.alert.btn-primary {
 #signup {
   width: 500px;
   height: 300px;
-  margin: 110px auto 0;
+  margin: 120px auto 0;
   text-align: center;
   padding: 10px;
   border-radius: 20px;
@@ -226,4 +226,16 @@ div.alert.btn-primary {
   font-weight: 400;
   color: #ffffff;
   padding: 15px;
+}
+
+#aboutBtn {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0px 0px 0 10px;
+  padding: 5px 10px;
+  height: 35px;
+  display: inline;
+}
+
+#aboutModal {
+  line-height: 1.4;
 }

@@ -9,14 +9,16 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: {
           args: [2,50],
-          msg:'Please enter your name.'
+          msg: 'Please enter your name.'
         }
       }
     },
     email: {
       type: DataTypes.STRING,
       validate: {
-        isEmail: true
+        isEmail: {
+          msg: 'Please enter a valid e-mail address.'
+        }
       }
     },
     password: {

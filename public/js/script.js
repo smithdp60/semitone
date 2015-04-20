@@ -1,5 +1,6 @@
 $(function() {
 
+//AJAX for removing favorite from user list
   $('.removeButton').on('click', function(e) {
     e.preventDefault();
     var delBtn = $(this);
@@ -16,6 +17,7 @@ $(function() {
   })
 
 
+//AJAX for adding favorite to user list
   $('.addForm').on('click', function(e) {
     e.preventDefault();
     var myUrl = $(this).attr('action');
@@ -30,11 +32,6 @@ $(function() {
       });
     })
   });
-
-
-
-
-
 
 
 })

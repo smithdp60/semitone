@@ -91,7 +91,6 @@ router.post('/login',function(req,res){
 });
 
 
-
 //GET /auth/logout
 //logout logged in user
 router.get('/logout',function(req,res){
@@ -99,7 +98,6 @@ router.get('/logout',function(req,res){
     req.flash('info','You have been logged out.')
     res.redirect('/');
 });
-
 
 
 module.exports = router;
