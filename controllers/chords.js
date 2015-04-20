@@ -36,7 +36,9 @@ router.get("/", function(req,res) {
               var $ = cheerio.load(html);
               $('pre#core').each(function (i, element) {
               });
-              var chords = $('pre#core').html().trim();
+              var unfilteredChords = $('pre#core').html();
+              if (unfilteredChords !== null && unfilteredChords !== undefined) {
+                var chords = unfilteredChords.trim();
               // .replace(/\(|\)/g, "") // removed from between html() and trim()
 
               //retrieves YouTube video ID
@@ -52,20 +54,29 @@ router.get("/", function(req,res) {
                     } else if (fave === null) {
                       fave = false;
                     }
-                  res.render("chords/index", {slicedTitle:slicedTitle, link:link, chords:chords, slicedUrl:slicedUrl, fave:fave});
+                    res.render("chords/index", {slicedTitle:slicedTitle, link:link, chords:chords, slicedUrl:slicedUrl, fave:fave});
                   })
                 })
               });
+            } else {
+
+            req.flash('info', 'Please try a different search.');
+            res.redirect('./');
+
+
             }
-          });
-      } else {
-        res.redirect('./');
-      }
-    }
-    })
-  } else {
-    res.redirect('./');
-  }
+          }
+        });
+} else {
+  req.flash('info', 'Please try a different search.');
+  res.redirect('./');
+}
+}
+})
+} else {
+  req.flash('info', 'Please try a different search.');
+  res.redirect('./');
+}
 })
 
 

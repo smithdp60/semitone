@@ -1,6 +1,29 @@
 <% include partials/header %>
 
 
+<% if(typeof alerts !== 'undefined'){ %>
+<% for(key in alerts){ %>
+<% alerts[key].forEach(function(thisMsg){ %>
+
+<div class="alert alert-info text-center fade in" id="main-alert" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+  <% if (thisMsg === 'Logged in.') { %>
+    <%= thisMsg %> Welcome, <%= getUser.name %>.
+  <% } else { %>
+  <%= thisMsg %>
+  <% } %>
+</div>
+
+<% }); %>
+<% } %>
+<% } %>
+
+
+
+
 <div id="logo">
 
   <div id="logoPic">
@@ -11,9 +34,9 @@
     <h3 id="sloganText">Transpose<br>
       Save<br>
       Share</h3>
-  </div>
+    </div>
 
-</div>
+  </div>
 
 
 

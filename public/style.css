@@ -42,6 +42,8 @@ body {
 }
 
 .search-button {
+  width: 71px;
+  height: 46px;
   padding: 12px;
   margin-top: 9px;
   margin-left: 12px;
@@ -81,6 +83,14 @@ body {
   margin-right: 20px;
   font-size: 12em;
   color: #ffffff;
+}
+
+#main-alert {
+  width: 300px;
+  margin: 0px 145px 0 0;
+  top: 100px;
+  padding-left: 13.5px;
+  float: right;
 }
 
 
