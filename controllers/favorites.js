@@ -11,9 +11,17 @@ router.use(bodyParser.urlencoded({extended:false}));
 
 //VIEW INDIVIDUAL FAVORITE
 router.get("/:id", function(req, res) {
-  db.chord.find({where: {id: req.params.id}}).then(function(taco){
-    res.render("favorites/index", {faves:taco})
-  });
+  if (isNaN(req.params.id) === false) {
+    db.chord.find({where: {id: req.params.id}}).then(function(taco){
+      if (taco !== null && taco !== undefined) {
+        res.render("favorites/index", {faves:taco})
+      } else {
+        res.status(404).render('404', {title: "Sorry, page not found."});
+      }
+    });
+  } else {
+    res.status(404).render('404', {title: "Sorry, page not found."});
+  }
 });
 
 

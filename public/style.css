@@ -249,3 +249,22 @@ div.alert.btn-primary {
 #aboutModal {
   line-height: 1.4;
 }
+
+
+/*404*/
+
+#error {
+  width: 500px;
+  height: 300px;
+  margin: 120px auto 0;
+  text-align: center;
+  padding: 100px 0;
+  border-radius: 20px;
+  background: rgba(20,20,20,.75);
+  vertical-align: middle;
+  font-family: 'Dosis', sans-serif;
+}
+
+#errorMessage {
+  color: #ffffff;
+}

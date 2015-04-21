@@ -63,5 +63,10 @@ app.get("/", function(req, res) {
 })
 
 
+//404 error message
+app.use(function(req, res, next){
+    res.status(404).render('404', {title: "Sorry, page not found."});
+});
+
 
 app.listen(process.env.PORT || 3000);
