@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Semitone</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="/style.css">
@@ -68,9 +69,9 @@
             <div class="alert btn-primary">
               <div class="details">
                 <a href=<%= "/favorites/" + allFaves[i].id %>>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+                  <button type="button" class="btn btn-default btn-xs favMenuBtns"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
                 </a>&nbsp;
-                <button type="submit" class="btn btn-danger btn-xs removeButton"
+                <button type="submit" class="btn btn-danger btn-xs removeButton favMenuBtns"
                 a href="/favorites/<%=allFaves[i].id%>"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
                 &nbsp;
                 <%- allFaves[i].song %>

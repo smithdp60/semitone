@@ -93,6 +93,11 @@ body {
   float: right;
 }
 
+.favMenuBtns {
+  height: 20px;
+  padding: 1px 5px 3px;
+}
+
 
 /*CHORDS*/
 
@@ -267,4 +272,15 @@ div.alert.btn-primary {
 
 #errorMessage {
   color: #ffffff;
+}
+
+
+/*MOBILE OPTIMIZATION*/
+
+@media only screen and (max-width: 1000px) {
+
+ul.nav.navbar-nav.navbar-right {
+
+}
+
 }

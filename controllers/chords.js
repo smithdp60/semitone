@@ -59,11 +59,8 @@ router.get("/", function(req,res) {
                 })
               });
             } else {
-
-            req.flash('info', 'Please try a different search.');
-            res.redirect('./');
-
-
+              req.flash('info', 'Please try a different search.');
+              res.redirect('./');
             }
           }
         });
