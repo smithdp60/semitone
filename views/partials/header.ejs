@@ -30,26 +30,24 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="/">Semitone</a>
       </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <% if (getUser) { %>
-          <a href="#favoritesModal" role="button" class="btn btn-primary btn-show header-buttons" data-toggle="modal">Favorites</a>
-          <a href="/auth/logout" role="button" class="btn btn-primary btn-show header-buttons" data-toggle="modal">Log Out</a>
-          <% } else { %>
-          <a href="/auth/login" role="button" class="btn btn-primary btn-show header-buttons">Log In</a>
-          <a href="/auth/signup" role="button" class="btn btn-primary btn-show header-buttons">Sign Up</a>
-          <% } %>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <form class="navbar-form navbar-left" role="search" method="get" action="/chords">
-            <div class="form-group">
-              <input name="q" type="text" class="form-control" id="searchBox"
-              placeholder="Search by artist and song title">
-            </div>
-            <button type="submit" class="btn btn-primary search-button" data-loading-text="Searching" autocomplete="off">Search</button>
-          </form>
-        </ul>
-      </div>
+      <ul class="nav navbar-nav">
+        <% if (getUser) { %>
+        <a href="#favoritesModal" role="button" class="btn btn-primary btn-show header-buttons" data-toggle="modal">Favorites</a>
+        <a href="/auth/logout" role="button" class="btn btn-primary btn-show header-buttons" data-toggle="modal">Log Out</a>
+        <% } else { %>
+        <a href="/auth/login" role="button" class="btn btn-primary btn-show header-buttons">Log In</a>
+        <a href="/auth/signup" role="button" class="btn btn-primary btn-show header-buttons">Sign Up</a>
+        <% } %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-left" role="search" method="get" action="/chords">
+          <div class="form-group">
+            <input name="q" type="text" class="form-control" id="searchBox"
+            placeholder="Search by artist and song title">
+          </div>
+          <button type="submit" class="btn btn-primary search-button" data-loading-text="Searching" autocomplete="off">Search</button>
+        </form>
+      </ul>
     </div>
   </nav>
 

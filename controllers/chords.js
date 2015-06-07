@@ -3,17 +3,13 @@ var bodyParser = require('body-parser');
 var router = express.Router();
 var request = require('request');
 var cheerio = require('cheerio');
-var search = require('youtube-search');
+var YouTube = require('youtube-node');
+var youTube = new YouTube();
 var db = require('../models');
 
+youTube.setKey(process.env.GOOGLE_API_KEY);
+
 router.use(bodyParser.urlencoded({extended:false}));
-
-//YOUTUBE SEARCH LIMITATIONS
-var opts = {
-  maxResults: 1,
-  startIndex: 1
-};
-
 
 //DATA SCRAPING FUNCTION
 router.get("/", function(req,res) {
@@ -39,40 +35,31 @@ router.get("/", function(req,res) {
               var unfilteredChords = $('pre#core').html();
               if (unfilteredChords !== null && unfilteredChords !== undefined) {
                 var chords = unfilteredChords.trim();
-              // .replace(/\(|\)/g, "") // removed from between html() and trim()
-
-              //retrieves YouTube video ID
-              search(slicedTitle, opts, function(err, results) {
-                if(err) return console.log(err);
-                var titles = results.map(function(video) {
-                  var urlObject = {video:video.url};
-                  var url = (urlObject['video'])
-                  var slicedUrl = url.slice(url.indexOf("=") + 1, url.indexOf("&"));
-                  db.chord.find({where: {song: slicedTitle, userId: req.getUser().id}}).then(function(fave) {
-                    if (fave !== null) {
-                      fave = true;
-                    } else if (fave === null) {
-                      fave = false;
-                    }
-                    res.render("chords/index", {slicedTitle:slicedTitle, link:link, chords:chords, slicedUrl:slicedUrl, fave:fave});
-                  })
-                })
-              });
-            } else {
-              req.flash('info', 'Please try a different search.');
-              res.redirect('./');
+                youTube.search(slicedTitle, 1, function(error, result) {
+                  if (error) {
+                    console.log(error);
+                  }
+                  else {
+                    var url = JSON.stringify(result.items[0].id.videoId, null, 1);
+                    var slicedUrl = url.replace(/["]+/g, '');
+                    db.chord.find({where: {song: slicedTitle, userId: req.getUser().id}}).then(function(fave) {
+                      if (fave !== null) {
+                        fave = true;
+                      } else if (fave === null) {
+                        fave = false;
+                      }
+                      res.render("chords/index", {slicedTitle:slicedTitle, link:link, chords:chords, slicedUrl:slicedUrl, fave:fave});
+                    })
+                  }
+                });
+              }
             }
-          }
-        });
+          });
 } else {
   req.flash('info', 'Please try a different search.');
   res.redirect('./');
-}
-}
+}};
 })
-} else {
-  req.flash('info', 'Please try a different search.');
-  res.redirect('./');
 }
 })
 

@@ -24,12 +24,14 @@
     "ejs": "^2.3.1",
     "express": "^4.12.3",
     "express-session": "^1.11.1",
+    "googleapis": "^2.0.3",
     "pg": "^4.3.0",
     "pg-hstore": "^2.3.2",
     "request": "^2.55.0",
     "sequelize": "^2.0.5",
     "sequelize-cli": "^1.6.0",
     "youtube-api": "^0.3.2",
+    "youtube-node": "^1.2.0",
     "youtube-search": "^0.2.0"
   }
 }

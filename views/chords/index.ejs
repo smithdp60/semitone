@@ -1,5 +1,30 @@
 <% include ../partials/header %>
 
+<div class="right">
+  <div class="song-info">
+    <form class="addForm" method="post" action="/chords">
+      <input type="hidden" name="song" value="<%= slicedTitle %>">
+      <input type="hidden" name="chords" value="<%= chords %>">
+      <input type="hidden" name="youtube" value="<%= slicedUrl %>">
+      <h2>
+        <% if (getUser) { %>
+        <% if (fave !== true) { %>
+        <button type="submit" class="btn btn-primary btn-md favBtn">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+        </button>
+        <span id="spaces">&nbsp;</span>
+        <% } %>
+        <% } %>
+        <%- slicedTitle %>
+      </h2>
+    </form>
+  </div>
+
+  <div class="youtube">
+    <iframe type="text/html" src=<%= "http://www.youtube.com/embed/" + slicedUrl %> frameborder="0"></iframe>
+
+  </div>
+</div>
 <div class="left">
   <pre data-key="Ab">
     <%- chords %>
@@ -9,39 +34,4 @@
       $("pre").transpose({ key : 'Ab' });
     });
   </script>
-
-</div>
-
-
-<div class="right">
-  <div class="song-info">
-
-
-    <form class="addForm" method="post" action="/chords">
-      <input type="hidden" name="song" value="<%= slicedTitle %>">
-      <input type="hidden" name="chords" value="<%= chords %>">
-      <input type="hidden" name="youtube" value="<%= slicedUrl %>">
-      <h2>
-        <%- slicedTitle %>
-        <% if (getUser) { %>
-        <% if (fave !== true) { %>
-        <span id="spaces">&nbsp;&nbsp;</span><button type="submit" class="btn btn-primary btn-md favBtn">
-        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-      </button>
-      <% } %>
-      <% } %>
-
-
-    </h2>
-  </form>
-</div>
-
-<div class="youtube">
-
-  <iframe src=<%= "https://www.youtube.com/embed/" + slicedUrl %> frameborder="0" allowfullscreen></iframe>
-
-
-</div>
-
-</div>
 </div>

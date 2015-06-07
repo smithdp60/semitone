@@ -9,6 +9,23 @@
 
 <% include ../partials/header %>
 
+
+
+<div class="right">
+  <div class="song-info">
+    <h2>
+      <%- faves.song %>
+    </h2>
+
+    <div class="fb-share-button" id="FB" data-href="https://semitone.herokuapp.com/favorites/<%= faves.id %>" data-layout="button">
+    </div>
+  </div>
+
+  <div class="youtube">
+
+    <iframe src=<%= "https://www.youtube.com/embed/" + faves.youtube %> frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
 <div class="left">
   <pre data-key="Ab">
     <%- faves.chords %>
@@ -18,26 +35,4 @@
       $("pre").transpose({ key : 'Ab' });
     });
   </script>
-
-</div>
-
-
-<div class="right">
-  <div class="song-info">
-      <h2>
-        <%- faves.song %>
-    </h2>
-
-<div class="fb-share-button" id="FB" data-href="https://semitone.herokuapp.com/favorites/<%= faves.id %>" data-layout="button"></div>
-
-</div>
-
-<div class="youtube">
-
-  <iframe src=<%= "https://www.youtube.com/embed/" + faves.youtube %> frameborder="0" allowfullscreen></iframe>
-
-
-</div>
-
-</div>
 </div>

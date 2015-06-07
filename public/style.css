@@ -122,6 +122,7 @@ body {
   display: inline-block;
   margin: 0;
   padding: 0;
+  float: right;
 }
 .song-info {
   color: #ffffff;
@@ -277,10 +278,83 @@ div.alert.btn-primary {
 
 /*MOBILE OPTIMIZATION*/
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1020px) {
 
-ul.nav.navbar-nav.navbar-right {
+  div.navbar-header {
+    display: inline-block;
+  }
 
-}
+  nav {
+    text-align: center;
+  }
+
+  #nav {
+    height: 150px;
+  }
+
+  ul.nav.navbar-nav {
+    display: inline-block;
+    clear: none;
+    margin: 0;
+    border: none;
+    text-align: center;
+
+  }
+
+  .navbar-brand {
+    float: none;
+    line-height: 1em;
+    margin: 0;
+    padding: 0 25px 0 0;
+    text-align: center;
+  }
+
+  .navbar-brand a {
+    float: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: inline;
+  }
+
+  .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border: none;
+
+  }
+
+  ul.nav.navbar-nav.navbar-right {
+    border: none;
+    text-align: center;
+  }
+
+  form.navbar-form.navbar-left {
+    width: 100vw;
+    display: inline-block;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    box-shadow: none;
+    -webkit-box-shadow: none
+  }
+
+  div.form-group {
+    display: inline-block;
+    border: none;
+  }
+
+  #searchBox {
+    margin-top: 0;
+  }
+
+  .search-button {
+    margin-top: 0;
+  }
+
+  .header-buttons {
+    margin: 0;
+    vertical-align: bottom;
+  }
 
 }
