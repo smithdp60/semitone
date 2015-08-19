@@ -16,51 +16,51 @@ router.get("/", function(req,res) {
   var query = req.query.q;
   var user = req.getUser();
   if (query !== "") {
-  //retrieves chord search results
-  request('http://www.ultimate-tabs.com/search.htm?search=' + query, function (error, response, html) {
-    if (!error && response.statusCode == 200) {
-      var $ = cheerio.load(html);
-      $('ul#lista li a').each(function (i, element) {
-      });
-      var preSlicedTitle = $('ul#lista li a').first().html();
-      if (preSlicedTitle !== null && preSlicedTitle !== undefined) {
-        var slicedTitle = preSlicedTitle.slice(0, preSlicedTitle.indexOf("<"));
-        var link = "http://www.ultimate-tabs.com/" + $('ul#lista li a').first().attr('href');
-          //uses first retrieved result and retrieves chords
-          request(link, function (error, response, html) {
-            if (!error && response.statusCode == 200) {
-              var $ = cheerio.load(html);
-              $('pre#core').each(function (i, element) {
-              });
-              var unfilteredChords = $('pre#core').html();
-              if (unfilteredChords !== null && unfilteredChords !== undefined) {
-                var chords = unfilteredChords.trim();
-                youTube.search(slicedTitle, 1, function(error, result) {
-                  if (error) {
-                    console.log(error);
-                  }
-                  else {
-                    var url = JSON.stringify(result.items[0].id.videoId, null, 1);
-                    var slicedUrl = url.replace(/["]+/g, '');
-                    db.chord.find({where: {song: slicedTitle, userId: req.getUser().id}}).then(function(fave) {
-                      if (fave !== null) {
-                        fave = true;
-                      } else if (fave === null) {
-                        fave = false;
-                      }
-                      res.render("chords/index", {slicedTitle:slicedTitle, link:link, chords:chords, slicedUrl:slicedUrl, fave:fave});
-                    })
-                  }
+    //retrieves chord search results
+    request('http://www.ultimate-tabs.com/search.htm?search=' + query, function (error, response, html) {
+      if (!error && response.statusCode == 200) {
+        var $ = cheerio.load(html);
+        $('ul#lista li a').each(function (i, element) {
+        });
+        var preSlicedTitle = $('ul#lista li a').first().html();
+        if (preSlicedTitle !== null && preSlicedTitle !== undefined) {
+          var slicedTitle = preSlicedTitle.slice(0, preSlicedTitle.indexOf("<"));
+          var link = "http://www.ultimate-tabs.com/" + $('ul#lista li a').first().attr('href');
+            //uses first retrieved result and retrieves chords
+            request(link, function (error, response, html) {
+              if (!error && response.statusCode == 200) {
+                var $ = cheerio.load(html);
+                $('pre#core').each(function (i, element) {
                 });
+                var unfilteredChords = $('pre#core').html();
+                if (unfilteredChords !== null && unfilteredChords !== undefined) {
+                  var chords = unfilteredChords.trim();
+                  youTube.search(slicedTitle, 1, function(error, result) {
+                    if (error) {
+                      console.log(error);
+                    } else {
+                      var url = JSON.stringify(result.items[0].id.videoId, null, 1);
+                      var slicedUrl = url.replace(/["]+/g, '');
+                      db.chord.find({where: {song: slicedTitle, userId: req.getUser().id}}).then(function(fave) {
+                        if (fave !== null) {
+                          fave = true;
+                        } else if (fave === null) {
+                          fave = false;
+                        }
+                        res.render("chords/index", {slicedTitle:slicedTitle, link:link, chords:chords, slicedUrl:slicedUrl, fave:fave});
+                      })
+                    }
+                  });
+                }
               }
-            }
-          });
-} else {
-  req.flash('info', 'Please try a different search.');
-  res.redirect('./');
-}};
-})
-}
+            });
+        } else {
+          req.flash('info', 'Please try a different search.');
+          res.redirect('./');
+        }
+      };
+    })
+  }
 })
 
 

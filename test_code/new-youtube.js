@@ -1,5 +1,6 @@
 var google = require ('googleapis');
-google.options ({ auth: 'AIzaSyA6J3ruD71hEgF7X9kVGZd30DZotiy9DRI' });
+// google.options ({ auth: 'AIzaSyA6J3ruD71hEgF7X9kVGZd30DZotiy9DRI' });
+// OLD API KEY; disabled
 var youtube = google.youtube ('v3');
 
 var search_youtube = function(query) {
