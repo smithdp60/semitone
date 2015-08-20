@@ -39,7 +39,7 @@ app.use('*', function(req,res,next){
 //middleware for showing all favorites in header modal
 app.use(function(req,res,next){
   db.chord.findAll({where: {userId: req.getUser().id}}).then(function(taco){
-    res.locals.allFaves=taco;
+    res.locals.allFaves = taco;
     next();
   });
 })
@@ -47,7 +47,7 @@ app.use(function(req,res,next){
 
 //middleware for alerts
 app.use(function(req,res,next){
-  res.locals.alerts=req.flash();
+  res.locals.alerts = req.flash();
   next();
 })
 
